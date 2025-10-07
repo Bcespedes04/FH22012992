@@ -1,0 +1,71 @@
+﻿@model BinarioApp.Models.BinaryViewModel
+@{
+    ViewData["Title"] = "Operaciones Binarias";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-3">Operaciones con Binarios</h1>
+    <p class="text-muted">
+        Ingrese dos cadenas binarias (a y b). Reglas: solo 0/1, longitud 1–8, y múltiplo de 2 (2, 4, 6 u 8).
+    </p>
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "row g-3" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-12">
+            @Html.ValidationSummary(excludePropertyErrors: true, message: null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="A" class="form-label">a</label>
+            <input asp-for="A" class="form-control" placeholder="Ej: 1010, 0000, 01010101" />
+            <span asp-validation-for="A" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="B" class="form-label">b</label>
+            <input asp-for="B" class="form-control" placeholder="Ej: 11, 0101, 00000010" />
+            <span asp-validation-for="B" class="text-danger"></span>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Calcular</button>
+        </div>
+    }
+
+    @if (Model?.Results != null && Model.Results.Any())
+    {
+        <hr class="my-4" />
+        <h2 class="mb-3">Resultados</h2>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
+                <thead>
+                    <tr>
+                        <th>Ítem</th>
+                        <th>Bin</th>
+                        <th>Oct</th>
+                        <th>Dec</th>
+                        <th>Hex</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var r in Model.Results)
+                {
+                    <tr>
+                        <td>@r.Item</td>
+                        <td><code>@r.Bin</code></td>
+                        <td>@r.Oct</td>
+                        <td>@r.Dec</td>
+                        <td>@r.Hex</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

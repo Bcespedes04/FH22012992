@@ -1,0 +1,27 @@
+# === Build artefacts (.NET / VS) ===
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# === Test results / coverage ===
+[Tt]est[Rr]esults/
+*.coverage
+*.coveragexml
+
+# === NuGet ===
+*.nupkg
+**/packages/*
+
+# === Rider / JetBrains / VSCode (opcionales) ===
+.idea/
+*.DotSettings.user
+.vscode/
+
+# === Logs / OS ===
+*.log
+.DS_Store
+Thumbs.db
