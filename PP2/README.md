@@ -44,7 +44,7 @@ dotnet clean
 ## Ver información del SDK y runtime instalados
 dotnet --info
 
-Enlaces
+# Enlaces
 
 Stack Overflow – Conversión entre binario y decimal en C#
 https://stackoverflow.com/questions/2350283/how-do-i-convert-an-int-to-binary-in-c
@@ -64,7 +64,7 @@ https://stackoverflow.com/questions/4286675/how-to-pass-data-from-controller-to-
 Microsoft Learn – Uso de etiquetas asp-for y asp-action en formularios Razor
 https://learn.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-8.0
 
-Prompts a chatgpt
+# Prompts a chatgpt
 
 Prompt: “¿Valido binario con Regex o recorro caracteres?”
 Respuesta: “Regex.IsMatch(text, ^[01]+$) es directo; recorrer chars también sirve y evita dependencias.”
@@ -75,7 +75,7 @@ Respuesta: “Usa Convert.ToInt32(bin, 2) y Convert.ToString(n, 2); en .NET 8+, 
 Prompt: “¿Qué pasa con números negativos y ceros a la izquierda?”
 Respuesta: “Negativos: define regla (permitir o no). Convert.ToString(-5, 2) usa complemento a dos; ceros a la izquierda no afectan valor.” 
 
-Las respuestas a las siguientes preguntas:
+## Las respuestas a las siguientes preguntas:
 
 ¿Cuál es el número que resulta al multiplicar, si se introducen los valores máximos permitidos en a y b? Indíquelo en todas las bases (binaria, octal, decimal y hexadecimal).
 
