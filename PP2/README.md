@@ -1,15 +1,15 @@
-PP2 — Conversor y Validador de Números Binarios (ASP.NET Core MVC)
+# PP2 — Conversor y Validador de Números Binarios (ASP.NET Core MVC)
 
-Estudiante: Brandon Céspedes Morales
-Carné: FH22012992
+# Estudiante: Brandon Céspedes Morales
+# Carné: FH22012992
 
-Objetivo
+# Objetivo
 
 Crear una aplicación en ASP.NET Core MVC (.NET 8) que:
 
 Valide si una cadena es binaria (solo 0 y 1).
 
-Convierta:
+# Convierta:
 
 Binario → Decimal.
 
