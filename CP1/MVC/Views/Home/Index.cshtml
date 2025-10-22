@@ -1,0 +1,41 @@
+﻿@model TheModel
+
+<div>
+    <form asp-action="Index" method="post">
+        <label asp-for="Phrase">Phrase:</label>
+        <input name="Phrase"
+               value="@(Model?.Phrase ?? string.Empty)"
+               type="text"
+               data-val="true"
+               data-val-required="La frase es requerida."
+               data-val-minlength="La frase debe tener al menos 5 caracteres."
+               data-val-minlength-min="5"
+               data-val-maxlength="La frase no debe superar los 25 caracteres."
+               data-val-maxlength-max="25" />
+        <small><span asp-validation-for="Phrase"></span></small>
+        <br />
+        <input type="submit" value="Count" />
+    </form>
+</div>
+
+<div>
+@{
+    if (Model != null)
+    {
+        if (ViewBag.Valid)
+        {
+            <div><b>Counts:</b></div>
+            <ul>
+                @foreach(var count in Model.Counts!.OrderBy(c => c.Value).Reverse()) {
+                    <li>'@count.Key': @count.Value</li>
+                }
+            </ul>
+            <div><b>Lower case</b>: @Model.Lower</div>
+            <div><b>Upper case</b>: @Model.Upper</div>
+        }
+        else {
+            <span>Check errors!</span>
+        }
+    }
+}
+</div>
