@@ -1,0 +1,42 @@
+# === Build artefacts (.NET / VS) ===
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# === Test results / coverage ===
+[Tt]est[Rr]esults/
+*.coverage
+*.coveragexml
+
+# === NuGet ===
+*.nupkg
+**/packages/*
+
+# === Rider / JetBrains / VSCode (opcionales) ===
+.idea/
+*.DotSettings.user
+.vscode/
+
+# === Logs / OS ===
+*.log
+.DS_Store
+Thumbs.db
+
+# === PP4: exclusiones específicas ===
+# Excluir base de datos, CSV y TSV dentro de /data/
+data/*.db
+data/*.csv
+data/*.tsv
+
+# Excluir carpeta de migraciones
+Migrations/
+
+# === Opcional: ignorar archivos temporales o de respaldo ===
+*.tmp
+*.bak
+*.old
+
